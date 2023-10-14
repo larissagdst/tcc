@@ -13,6 +13,7 @@ function addProject(project) {
   const defaultCoverImage = 'https://img.freepik.com/free-vector/software-developers-programming-computer-with-script_74855-6661.jpg?w=996&t=st=1694404019~exp=1694404619~hmac=88a864c805321faeb739015edb9416d8e834aa24413259f6bbf1802012b3ae0e';
   const projectCard = document.createElement('div');
   projectCard.classList.add('project-card');
+  projectCard.addEventListener('click', () => { window.location.href = `detail.html?id=${project.id}`})
 
   const image = document.createElement('img');
   image.classList.add('project-image');

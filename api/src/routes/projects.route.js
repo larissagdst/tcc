@@ -12,3 +12,4 @@ projectsRouter.get('/:id', projectController.detail);
 module.exports = {
   projectsRouter,
 }
+

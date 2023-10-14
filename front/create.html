@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Create</title>
-
-</head>  
+    <link rel="stylesheet" href="styles/create.css">
+</head>
 <body>
     <h1>Create Project</h1>
-    <form id="form">
-        <label>name</label>
-        <input id="name" name="name" required placeholder="Digite o nome"/>
-        <label>Image</label>
-        <input id="coverImage" name="coverImage" placeholder="Digite a URL da imagem"/>
-        <label>Description</label>
-        <textarea id="description" name="description" placeholder="Digite uma descrição"></textarea>
-        <button type="submit">Salvar</button>
-        
-    </form>
+        <form id="form">
+            <div class="input-container">
+                <label>Name</label>
+                <input id="name" name="name" required placeholder="Enter a name"/>
+            </div>
+            <div class="input-container">
+                <label>Image</label>
+                <input id="coverImage" name="coverImage" placeholder="Enter a image URL"/>
+            </div>
+            <div class="input-container">
+                <label>Description</label>
+                <textarea id="description" name="description" placeholder="Enter a description"></textarea>
+            </div>
+            <button type="submit">Save</button>
+        </form>
     <script src="scripts/create.js"></script>
 </body>
 </html>
