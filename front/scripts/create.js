@@ -1,6 +1,13 @@
 const form = document.getElementById("form")
 form.addEventListener("submit", create)
 
+const token = localStorage.getItem("token");
+
+if(!token) {
+    alert("To create project you need to login");
+    window.location.href = 'login.html'
+}
+
 async function create(event) {
     event.preventDefault()
     const name = document.getElementById("name").value
@@ -10,7 +17,8 @@ async function create(event) {
     const response = await fetch("http://localhost:3333/projects", {
         method:"post",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify({
             name, coverImage, description

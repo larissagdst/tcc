@@ -1,5 +1,7 @@
 const typeorm = require('typeorm');
 const { projectEntity } = require('../entities/project.entity');
+const { userEntity } = require('../entities/user.entity')
+const { ratingEntity } = require('../entities/rating.entity')
 
 const db = new typeorm.DataSource({
   type: 'postgres',
@@ -9,7 +11,7 @@ const db = new typeorm.DataSource({
   password: 'password',
   database: 'projeto',
   synchronize: true,
-  entities: [projectEntity]
+  entities: [projectEntity, userEntity, ratingEntity]
 });
 
 module.exports = {

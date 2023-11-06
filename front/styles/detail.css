@@ -47,6 +47,30 @@ body {
     padding: 20px;
 }
 
+.project-ratings {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.rating {
+    padding: 0 15px;
+    border-bottom: 1px solid black;
+}
+
+.create-rating {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.create-rating form {
+    display: flex;
+    flex-direction: column;
+}
+
 a {
     text-decoration: none;
     color: white;

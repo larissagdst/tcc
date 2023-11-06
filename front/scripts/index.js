@@ -35,5 +35,10 @@ function addProject(project) {
   rating.textContent = `Rating: ${project.rating || 0} stars`;
   projectCard.appendChild(rating);
 
+  const user = document.createElement('div');
+  user.classList.add('project-description');
+  user.textContent = `Created by ${project.user.name}`;
+  projectCard.appendChild(user);
+
   projectList.appendChild(projectCard);
 }

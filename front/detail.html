@@ -19,9 +19,42 @@
     <div class="project-image">
         <img id="image" src="https://img.freepik.com/free-vector/software-developers-programming-computer-with-script_74855-6661.jpg?w=996&t=st=1694404019~exp=1694404619~hmac=88a864c805321faeb739015edb9416d8e834aa24413259f6bbf1802012b3ae0e" alt="project" />
     </div>
+    <div class="rate">
+        <h2>Rating:</h2>
+        <p id="rate">2 Stars</p>
+    </div>
     <div class="project-details">
         <h2>Description:</h2>
         <p id="description" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada sollicitudin fringilla. Donec eu justo maximus, tincidunt ipsum eu, finibus augue. Vestibulum faucibus lacus et fermentum fringilla. Nulla eget efficitur tortor. Curabitur hendrerit, nisi sit amet pretium pharetra, ipsum risus pretium tellus, quis maximus erat neque sed ex. In eu libero ullamcorper, euismod quam eget, cursus mauris. Mauris faucibus nisi eu mauris malesuada, sed consequat tortor mollis. Aliquam eleifend nunc sit amet pharetra condimentum. Ut mollis velit ac ullamcorper maximus. Fusce dapibus sodales blandit.</p>
+    </div>
+    <div id="create-rating" class="create-rating">
+        <h2>Leave a rating</h2>
+        <form id="form">
+            <div>
+                <label for="stars">Stars:</label>
+                <select name="stars" id="stars" form="stars">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5" selected>5</option>
+                </select>
+            </div>
+            <div class="rating-message">
+                <div>
+                    <label>Message</label>
+                </div>
+                <div>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+            </div>
+            <div>
+                <button>Rate</button>
+            </div>
+        </form>
+    </div>
+    <div class="project-ratings" id="project-ratings">
+        <h2>Ratings:</h2>
     </div>
 </div>
 <script src="scripts/detail.js"></script>

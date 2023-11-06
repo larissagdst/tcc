@@ -1,35 +1,30 @@
 const { EntitySchema } = require('typeorm');
 
-const projectEntity = new EntitySchema({
-  name: 'Project',
-  tableName: 'projects',
+const userEntity = new EntitySchema({
+  name: 'User',
+  tableName: 'users',
   columns: {
     id: {
       type: 'int',
       primary: true,
       generated: true,
     },
-    coverImage: {
-      type: 'varchar',
-      length: 255,
-      name: 'cover_image',
-      nullable: true
-    },
     name: {
       type: 'varchar',
       length: 255,
     },
-    description: {
-      type: 'text',
+    email: {
+      type: 'varchar',
+      length: 255,
+    },
+    password: {
+      type: 'varchar',
+      length: 255,
     },
     createdAt: {
       type: 'timestamp',
       name: 'created_at',
       default: () => 'CURRENT_TIMESTAMP',
-    },
-    userId: {
-      type: 'int',
-      name: 'user_id'
     },
     updatedAt: {
       type: 'timestamp',
@@ -43,24 +38,17 @@ const projectEntity = new EntitySchema({
     },
   },
   relations: {
-    user: {
-      type: 'many-to-one',
-      target: 'User',
-      eager: false,
-      joinColumn: {
-        name: 'user_id',
-        referencedColumnName: 'id'
-      }
+    projects: {
+      type: 'one-to-many',
+      target: 'Project'
     },
     ratings: {
       type: 'one-to-many',
-      target: 'Rating',
-      eager: false,
-      inverseSide: 'project'
+      target: 'Rating'
     }
   }
-});
+})
 
 module.exports = {
-  projectEntity,
+  userEntity
 }

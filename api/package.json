@@ -10,8 +10,10 @@
   "author": "Larissa Torres <llarissatorress@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.3",
     "typeorm": "^0.3.17",
     "up": "^1.0.2",

@@ -1,7 +1,19 @@
 const projectRepository = require('../repositories/project.repository');
 
 async function search() {
-  return projectRepository.search();
+  let projects = await projectRepository.search();
+
+  projects = projects.map(project => {
+
+    const rating = project.ratings.reduce((acc, current) => { return acc + current.star }, 0) / project.ratings.length;
+
+    return {
+      ...project,
+      rating: Math.ceil(rating)
+    }
+  })
+
+  return projects
 }
 
 async function create(project) {
@@ -31,7 +43,12 @@ async function detail(id) {
 
   if(!projectExists) return { error: true, status: 404, message: 'Project not found' };
 
-  return projectExists;
+  const rating = projectExists.ratings.reduce((acc, current) => { return acc + current.star }, 0) / projectExists.ratings.length;
+
+  return {
+    ...projectExists,
+    rating: Math.ceil(rating)
+  };
 }
 
 module.exports = {
